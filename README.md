@@ -1,24 +1,11 @@
-# README
+# TestGuru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Main entities:
 
-Things you may want to cover:
+**Test**
+> will include questions 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**User**
+ > they can be divided by two groups `clients` and `admins`
+ > clinets will be able to choose and take the tests
+ > admins will create and manage tests
