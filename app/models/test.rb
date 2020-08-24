@@ -4,10 +4,14 @@ class Test < ApplicationRecord
   has_many :user_tests
   has_many :users, through: :user_tests
 
-  scope :names_by_category, (lambda do |category|
-    where(categories: { title: category })
-    .order(id: :desc)
-    .includes(:category)
-    .pluck(:title)
-  end)
+  # scope :names_by_category, (lambda do |category|
+  #   where(categories: { title: category })
+  #   .order(id: :desc)
+  #   .includes(:category)
+  #   .pluck(:title)
+  # end)
+
+  def self.names_by_category(category)
+    where(categories: { title: category }).order(id: :desc).includes(:category).pluck(:title)
+  end
 end
