@@ -66,4 +66,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_125013) do
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "user_tests", "tests"
+  add_foreign_key "user_tests", "users"
 end
