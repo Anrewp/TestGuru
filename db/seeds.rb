@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create(name: 'Andrew', email: 'anrewp1991@gmail.com')
+category = Category.create(title: 'default category')
+test = category.tests.create(title: 'default category')
+question = test.questions.create(body: 'default test question')
+question.create_answer(body: 'default test answer')
+user.user_tests.create(test_id: test.id)
