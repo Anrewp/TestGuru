@@ -12,6 +12,6 @@ class Test < ApplicationRecord
   # end)
 
   def self.names_by_category(category)
-    where(categories: { title: category }).order(id: :desc).includes(:category).pluck(:title)
+    includes(:category).where(categories: { title: category }).order(id: :desc).pluck(:title)
   end
 end
