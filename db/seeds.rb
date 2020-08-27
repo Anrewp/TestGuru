@@ -8,7 +8,7 @@
 
 user = User.create(name: 'Andrew', email: 'anrewp1991@gmail.com')
 category = Category.create(title: 'default category')
-test = category.tests.create(title: 'default category')
+test = category.tests.create(title: 'default category', author_id: user.id)
 question = test.questions.create(body: 'default test question')
-question.create_answer(body: 'default test answer')
+question.answers.create(body: 'default test answer')
 user.user_tests.create(test_id: test.id)
