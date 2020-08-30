@@ -7,5 +7,6 @@ class CreateTests < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :tests, [:level, :title], unique: true
   end
 end
