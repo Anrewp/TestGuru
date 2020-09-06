@@ -3,13 +3,13 @@ class QuestionsController < ApplicationController
   before_action :find_question, only: %i[show destroy]
 
   def index
-    @questions = find_test.questions
+    @questions = @test.questions
   end
 
   def new; end
 
   def create
-    @question = find_test.questions.build(question_params)
+    @question = @test.questions.build(question_params)
 
     if @question.save
       redirect_to test_questions_path(@test)
@@ -28,11 +28,11 @@ class QuestionsController < ApplicationController
   private
 
   def find_question
-    @question ||= Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def find_test
-    @test ||= Test.find(params[:test_id])
+    @test = Test.find(params[:test_id])
   end
 
   def question_params
