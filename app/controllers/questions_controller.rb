@@ -1,12 +1,16 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, except: %i[show destroy]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[index new create]
+  before_action :find_question, only: %i[show destroy edit update]
+
+  def new; end
+
+  def show; end
+
+  def edit; end
 
   def index
     @questions = @test.questions
   end
-
-  def new; end
 
   def create
     @question = @test.questions.build(question_params)
@@ -18,7 +22,13 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def show; end
+  def update
+    if @question.update(question_params)
+      redirect_to test_questions_path(@question.test)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @question.destroy

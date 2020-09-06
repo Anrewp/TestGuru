@@ -1,7 +1,6 @@
-= @questions.find_each.with_index do |question, index|
-  %div
-    %div{style: 'display: flex; align-items: center;'}
-      %p{style: 'margin-right: 15px;'}
-        = "Question number[#{index}] - #{question.body}" 
-      = form_with model: question, url: question_path(question), method: :delete do |f|
-        = f.submit value: 'Delete'
+%h1=  "Questions for Test: #{@test.title}"
+= render 'questions', questions: @questions
+%br
+= button_to 'new question', new_test_question_path, method: :get
+%br
+= link_to 'Back', root_path
