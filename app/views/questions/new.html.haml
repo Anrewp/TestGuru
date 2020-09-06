@@ -1,0 +1,4 @@
+= form_with model: @test.questions.build, url: test_questions_path do |f|
+  %lable Question
+  = f.text_field :body
+  = f.submit
