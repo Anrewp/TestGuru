@@ -1,3 +1,5 @@
 %p= "Question id: #{@question.id}"
 %p= "Question belongs to Test:  #{@question.test.title}" 
 %p= "Question: #{@question.body}"
+= link_to 'Back', test_path(@question.test)
+= link_to 'Edit', edit_question_path

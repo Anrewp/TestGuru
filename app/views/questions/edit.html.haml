@@ -1,0 +1,6 @@
+%h1= question_header(@question)
+= render 'form', test: @question.test, 
+                 question: @question, 
+                 url: question_path(@question)
+%br
+= link_to 'Back', test_path(@question.test)
