@@ -1,4 +1,7 @@
-= form_with model: @test.questions.build, url: test_questions_path do |f|
-  %lable Question
-  = f.text_field :body
-  = f.submit
+- question = @test.questions.build
+%h1= question_header(question)
+= render 'form', test: @test, 
+                 question: question, 
+                 url: test_questions_path(@test)
+%br
+= link_to 'Back', test_path(@test)
