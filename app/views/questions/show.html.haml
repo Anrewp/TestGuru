@@ -1,5 +1,12 @@
-%p= "Question id: #{@question.id}"
-%p= "Question belongs to Test:  #{@question.test.title}" 
-%p= "Question: #{@question.body}"
+%h1
+  = "#{@question.test.title.capitalize} Question"
+%p= @question.body
+
+%h2 Answers
+= link_to 'new_answer', new_question_answer_path(@question)
+
+%ol
+  = render @question.answers
+
 = link_to 'Back', test_path(@question.test)
 = link_to 'Edit', edit_question_path
