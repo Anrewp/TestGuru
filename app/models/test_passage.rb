@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  PASSING_SCORE_PERCENT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -16,11 +18,15 @@ class TestPassage < ApplicationRecord
   end
 
   def score
-    ((correct_questions.to_f / test.questions.count.to_f) * 100).to_i
+    ((correct_questions.to_f / test.questions.count) * 100).to_i
   end
 
   def question_number
     test.questions.order(:id).ids.index(current_question.id) + 1
+  end
+
+  def success?
+    score > PASSING_SCORE_PERCENT
   end
 
   private
