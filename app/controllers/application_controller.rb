@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
 
+  before_action :authenticate_user!
+
   helper_method :current_user, :logged_in?
 
   private
