@@ -2,27 +2,15 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
 
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  helper_method :current_user, :logged_in?
+  protected
 
-  private
-
-  def rescue_with_record_not_found
-    render plain: 'Record Not Found!'
+  def after_sign_in_path_for(resource)
+    current_user.is_a?(Admin) ? admin_tests_path : (stored_location_for(resource) || root_path)
   end
 
-  def authenticate_user!
-    unless current_user
-      cookies[:request_url] = request.url
-      redirect_to login_path, alert: 'Are you a Guru? Vrify your Email and Password please'
-    end
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end

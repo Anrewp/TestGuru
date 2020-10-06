@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Admin Panel | TestGuru
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      = render 'admin/admin_nav'
+      = render 'shared/flash'
+      = yield 
+      = render 'layouts/footer'

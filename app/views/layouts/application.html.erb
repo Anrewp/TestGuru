@@ -11,9 +11,10 @@
 
   <body>
     <div class = wrapper>
-      <%= render partial: 'layouts/authentication_nav' %>
+      <%= render 'layouts/authentication_nav' %>
+      <%= render 'shared/flash' %>
       <%= yield %>
-      <%= render partial: 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

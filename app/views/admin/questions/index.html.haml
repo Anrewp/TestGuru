@@ -1,0 +1,6 @@
+%h1=  "Questions for Test: #{@test.title}"
+= render 'questions', questions: @questions
+%br
+= button_to 'new question', new_admin_test_question_path, method: :get
+%br
+= link_to 'Back', admin_tests_path
