@@ -30,11 +30,6 @@ class Admin::TestsController < Admin::BaseController
 
   def show; end
 
-  def start
-    current_user.tests << @test
-    redirect_to current_user.test_passage(@test)
-  end
-
   private
 
   def set_test
