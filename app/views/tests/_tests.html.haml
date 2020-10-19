@@ -1,9 +1,9 @@
 %table
   %tr
-    %th id
-    %th Name
-    %th Level
-    %th Questions
-    %th Action
+    %th= t('.id')
+    %th= t('.name')
+    %th= t('.level')
+    %th= t('.questions')
+    %th= t('.actions')
   %tbody
     = render partial: 'test', collection: tests

@@ -1,6 +1,6 @@
-%h1 Tests
+%h1= t('.header')
 %p
-  = link_to 'New test', new_admin_test_path
+  = link_to t('.link_new_test'), new_admin_test_path
 = render 'admin/tests/tests', tests: @tests
       
 

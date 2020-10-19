@@ -1,5 +1,5 @@
 %h1
-  = "The #{@test_passage.test.title} Test was Compelted!"
+  = t('.header', title: @test_passage.test.title)
 %b
   = passing_result_title_score(@test_passage)
 %p

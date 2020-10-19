@@ -1,4 +1,4 @@
-%h1=  "Questions for Test: #{@test.title}"
+%h1= t('.title', title: @test.title) #"Questions for Test: #{@test.title}"
 = render 'admin/questions/questions', questions: @test.questions
 %br
 = button_to 'new question', new_admin_test_question_path(@test), method: :get
