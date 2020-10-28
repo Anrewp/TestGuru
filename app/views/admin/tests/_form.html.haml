@@ -1,15 +1,20 @@
-= form_with model: [:admin, @test], local: true do |f|
-  = render 'shared/errors', resource: @test
-  %p
-    = f.label :title
-    = f.text_field :title, id: :test_title
-  %p
-    = f.label :level
-    = f.text_field :level, id: :test_level
-  %p
-    = f.label :category_id
-    = f.collection_select :category_id, Category.unscoped, :id, :title, prompt: true
-  %p
-    = f.hidden_field :author_id, value: current_user.id
-  %p
-    = f.submit
+.row.justify-content-center.mt-3
+  .col-6
+    .card.border-primary
+      .card-body
+        = form_with model: [:admin, @test], local: true do |f|
+          = render 'shared/errors', resource: @test
+          .form-group
+            %p
+              = f.label :title 
+              = f.text_field :title, id: :test_title, class: 'form-control'
+            %p
+              = f.label :level
+              = f.text_field :level, id: :test_level, class: 'form-control'
+            %p
+              = f.label :category_id
+              = f.collection_select :category_id, Category.unscoped, :id, :title, {promt: true}, {class: 'selectpicker form-control'}
+            %p
+              = f.hidden_field :author_id, value: current_user.id
+            %p
+              = f.submit class: 'btn btn-primary'

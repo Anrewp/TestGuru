@@ -1,3 +1,7 @@
-%h1= t('.title')
+.row.justify-content-center.mt-3
+  .col-6
+    %h1= t('.title')
 = render 'form'
-= link_to t('.link_back'), admin_tests_path
+.row.justify-content-center.mt-3
+  .col-6
+    = link_to t('.link_back'), admin_tests_path
