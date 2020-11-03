@@ -1,6 +1,6 @@
 %nav.navbar.navbar-light.bg-light
   = link_to 'TestGuru', root_path, class: 'navbar-brand'
-  - if current_user.is_a?(Admin)
+  - if current_user&.admin?
     %ul.navbar-nav.mr-auto
       %li.nav-item
         = link_to 'Admin panel', admin_tests_path
