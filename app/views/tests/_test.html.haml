@@ -1,6 +1,6 @@
-%tr
-  %td= test.id
-  %td= test.title
-  %td= test_hardnes(test.level)
-  %td= test.questions.size
-  %td= button_to 'Start', start_test_path(test)
+.row
+  .col-md-1= test.id
+  .col-md-3= test.title
+  .col-md-2= test_hardnes(test.level)
+  .col-md-4.text-center= test.questions.size
+  .col-md-2.text-center= button_to 'Start', start_test_path(test)

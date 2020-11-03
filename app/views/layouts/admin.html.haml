@@ -10,6 +10,7 @@
   %body
     .wrapper
       = render 'admin/admin_nav'
-      = render 'shared/flash'
-      = yield 
-      = render 'layouts/footer'
+      .container
+        = render 'shared/flash'
+        = yield
+        = render 'layouts/footer'

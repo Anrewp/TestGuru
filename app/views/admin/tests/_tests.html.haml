@@ -1,9 +1,7 @@
-%table
-  %tr
-    %th= t('.id')
-    %th= t('.name')
-    %th= t('.level')
-    %th= t('.questions')
-    %th= t('.actions')
-  %tbody
-    = render partial: 'admin/tests/test', collection: tests
+.row.mt-3.mb-2{style: 'font-weight: bold; border-bottom: 2px solid #ddd;'}
+  .col-md-1= t('.id')
+  .col-md-4= t('.name')
+  .col-md-2= t('.level')
+  .col-md-2.text-center= t('.questions')
+  .col-md-3.text-center= t('.actions')
+= render partial: 'admin/tests/test', collection: tests

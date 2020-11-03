@@ -1,6 +1,8 @@
-%h1= t('.header')
-%p
-  = link_to t('.link_new_test'), new_admin_test_path
-= render 'admin/tests/tests', tests: @tests
+.row.justify-content-center.mt-3
+  .col-6
+    %h1= t('.header')
+    %p
+      = link_to t('.link_new_test'), new_admin_test_path, data: { turbolinks: 'false' }
+    = render 'admin/tests/tests', tests: @tests
       
 

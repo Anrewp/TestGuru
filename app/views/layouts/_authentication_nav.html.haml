@@ -1,10 +1,13 @@
-- if user_signed_in?
-  %p.nav.user
-    = link_to "Welcome, #{current_user.name} Guru", root_path
-  %p.nav.user
-    = link_to 'Log Out', destroy_user_session_path, method: :delete
-- else
-  %p.nav.user
-    = link_to 'LogIn', user_session_path
-    = link_to 'SignUp', new_user_registration_path
-
+%nav.navbar.navbar-light.bg-light
+  = link_to 'TestGuru', root_path, class: 'navbar-brand'
+  - if current_user&.admin?
+    %ul.navbar-nav.mr-auto
+      %li.nav-item
+        = link_to 'Admin panel', admin_tests_path
+  %span.navbar-text
+    - if user_signed_in?
+      = link_to "Welcome, #{current_user.name} Guru", root_path
+      = link_to '| Log Out', destroy_user_session_path, method: :delete
+    - else
+      = link_to 'LogIn', user_session_path
+      = link_to '| SignUp', new_user_registration_path
