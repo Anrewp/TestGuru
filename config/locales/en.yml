@@ -62,8 +62,16 @@ en:
         categogry_id: Category
 
   test_passages:
+      gist:
+        success: 'Gist saved! link: %{url}'
+        failure: 'Gist not saved, something whent wrong!'
       result:
         header: "The %{title} Test was completed!"
+        
+  gists:
+    create:
+      success: 'Gist saved! link: %{url}'
+      failure: 'Gist not saved, something whent wrong!'
 
   shared:
     errors:
@@ -74,3 +82,7 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
+
+  gist:
+    description: "A qustion about %{title} from TestGuru"
+

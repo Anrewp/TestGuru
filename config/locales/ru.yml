@@ -44,8 +44,16 @@ ru:
         category_id: Категория
         
   test_passages:
+    gist:
+        success: 'Gist успешно сохранен! cсылка: %{url}'
+        failure: 'Во время сохранения gist произошла ошибка'
     result:
         header: "Тест %{title} успешно завершен!"
+        
+  gists:
+    create:
+      success: 'Gist успешно сохранен! cсылка: %{url}'
+      failure: 'Во время сохранения gist произошла ошибка'
 
   shared:
     errors:
@@ -58,3 +66,6 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
+
+  gist:
+    description: "Вопрос %{title} из TestGuru"
