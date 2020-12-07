@@ -3,12 +3,17 @@
 %p  
   = "Question #{@test_passage.question_number} from #{@questions_count}"
 %br
-%b
-  = @test_passage.current_question.body
+
+%p
+  %b
+    = @test_passage.current_question.body
+
 = form_with url: test_passage_path(@test_passage), method: :put do |f|
   = f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
     %p
       = b.check_box id: "answer_ids_#{b.object.id}"
       = b.label
+  %p
+    = link_to 'Gist Question', gists_path(test_passage_id: @test_passage.id), method: :post
   %p
     = f.submit 'Next'

@@ -1,0 +1,4 @@
+.row
+  .col-md-6.overflow-hidden= link_to gist.question.body.truncate(25), admin_question_path(gist.question)
+  .col-md-4.overflow-hidden= link_to gist.hexdigest, gist.url
+  .col-md-2= gist.user.email

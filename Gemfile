@@ -21,7 +21,9 @@ gem 'pg'
 gem 'haml-rails'
 gem 'devise'
 gem 'rails-i18n'
-
+gem 'faraday'
+gem 'figaro'
+gem 'octokit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
